@@ -35,7 +35,6 @@
       disabled
       name={`checked-${task.id}`}
       id={`archiveTask-${task.id}`}
-      style="background-color: red;"
     />
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <span
@@ -54,6 +53,7 @@
       name="title"
       id={`title-${task.id}`}
       placeholder="Input title"
+      style="background-color: red;"
     />
   </label>
   {#if task.state !== 'TASK_ARCHIVED'}
