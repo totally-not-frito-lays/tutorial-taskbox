@@ -1,3 +1,28 @@
+<script>
+  import { createEventDispatcher } from 'svelte';
+  const dispatch = createEventDispatcher();
+
+  /** Event handler for the Pin Task */
+  function PinTask() {
+    dispatch('onPinTask', { id: task.id });
+  }
+
+  /** Event handler for the Archive Task */
+  function ArchiveTask() {
+    dispatch('onArchiveTask', { id: task.id });
+  }
+
+  /** Composition of the task */
+  export let task = {
+    id: '',
+    title: '',
+    state: ''
+  };
+
+  /* Reactive declaration (computed prop in other frameworks) */
+  $: isChecked = task.state === "TASK_ARCHIVED";
+</script>
+
 <div class="list-item {task.state}">
   <label
     for={`checked-${task.id}`}
@@ -10,6 +35,7 @@
       disabled
       name={`checked-${task.id}`}
       id={`archiveTask-${task.id}`}
+      style="background-color: red;"
     />
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <span
@@ -28,7 +54,6 @@
       name="title"
       id={`title-${task.id}`}
       placeholder="Input title"
-     style="background-color: red;"
     />
   </label>
   {#if task.state !== 'TASK_ARCHIVED'}
