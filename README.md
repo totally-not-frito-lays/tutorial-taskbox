@@ -8,7 +8,8 @@
   Chromatic's Intro to Storybook Svelte template
 </h1>
 
-This template ships with the main Svelte and Storybook configuration files you'll need to get up and running fast.
+This template ships with the main Svelte and Storybook configuration files you'll need to get up and running fast. 
+The tutorial can be found on [storybook.js.org/tutorials](https://storybook.js.org/tutorials/intro-to-storybook/svelte/en/get-started/)
 
 ## 🚅 Quick start
 
