@@ -1,17 +1,16 @@
-import TaskList from './TaskList.svelte';
-
+import PureTaskList from './PureTaskList.svelte';
 import MarginDecorator from './MarginDecorator.svelte';
 
 import * as TaskStories from './Task.stories';
 
 export default {
-  component: TaskList,
-  title: 'TaskList',
+  component: PureTaskList,
+  title: 'PureTaskList',
   tags: ['autodocs'],
   //👇 The auxiliary component will be added as a decorator to help show the UI correctly
   decorators: [() => MarginDecorator],
   render: (args) => ({
-    Component: TaskList,
+    Component: PureTaskList,
     props: args,
     on: {
       ...TaskStories.actionsData,
